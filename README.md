@@ -1,18 +1,18 @@
-# SmartAgriculture: Smart Plant Monitoring and Disease Detection System
+# Leaf: Agricultural Analysis Suite
 
-This project, named "Leaf", integrates functionalities for smart plant monitoring, automated irrigation, and precise leaf disease detection. It leverages machine learning models and sensor data to provide a comprehensive solution for plant care and health management.
+"Leaf" is a comprehensive web application designed to assist in agricultural decision-making, offering tools for plant disease detection, optimal seed planting guidance, and sensor data monitoring.
 
 ## Features
 
-*   **Automated Plant Monitoring & Irrigation:** This system continuously monitors environmental conditions and soil moisture using simulated sensor data (from `plant_data.json` updated by `plant_monitor.py`). It automates watering based on predefined thresholds, ensuring optimal plant hydration. The core logic for this automated irrigation, including sensor interaction and control mechanisms, is inspired by and can be further explored in its dedicated repository.
-*   **Precise Leaf Disease Detection:** Utilizing an advanced, pre-trained MobileNetV2 model (specifically `linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification` from Hugging Face), this feature accurately identifies various plant diseases from uploaded leaf images. It provides not just the disease name but also a confidence score, empowering farmers and plant enthusiasts with a powerful diagnostic tool. The extensive research and model training behind this can be found in its original project.
-*   **Seed Size Prediction & Sowing Guidance:** This module is critical for optimal planting. It uses machine learning models loaded from `agricultural_models.pkl` to predict ideal seed size, sowing depth, and spacing based on various agricultural parameters like crop name, region, season, soil type, temperature, moisture, and soil pH. The `unique_values.pkl` file supplies the necessary dropdown options for these parameters. For a deep dive into the predictive models and their development, refer to the specific repository focused on seed analysis.
-*   **Weather Integration:** The application includes a proxy API (`/api/weather-proxy`) that fetches current weather data (temperature, wind speed, weather code) from the Open-Meteo API based on geographical coordinates, providing valuable environmental context.
-*   **User-Friendly Interface:** The entire system is accessible via a Flask-based web application. It features a modern, responsive UI built with HTML and CSS, designed for intuitive interaction and clear visualization of data and prediction results.
+*   **Precise Leaf Disease Detection:** This feature allows users to upload images of plant leaves, which are then analyzed by a pre-trained **MobileNetV2** deep learning model to accurately identify various plant diseases. It provides quick, actionable insights into plant health.
+*   **Optimal Seed Planting Guidance:** This module provides data-driven recommendations for ideal seed size, sowing depth, and plant spacing. It leverages machine learning models that consider multiple agricultural parameters such as selected crop type, geographical region, current season, prevalent soil type, ambient temperature, soil moisture levels, and soil pH.
+*   **Real-time Weather Integration:** The application dynamically fetches current temperature, wind speed, and other atmospheric conditions based on the user's geographical location using the **Open-Meteo API**. This integration provides crucial environmental context for agricultural predictions, with no API key required for basic usage.
+*   **Flexible Sensor Data Input:** Users can opt to integrate with external hardware sensors (e.g., ESP32, Arduino-based devices) to automatically populate environmental parameters like temperature, humidity, and soil moisture. The system supports direct fetching from a user-configured sensor URL or falls back to using included mock sensor data (`plant_data.json` updated by `plant_monitor.py`) for demonstration and testing purposes. Detailed setup instructions for ESP32 integration are available within the application via the "Sensor Setup Docs" page.
+*   **User-Friendly Interface:** The entire system is presented through a modern, responsive web interface built with **Flask**, **HTML**, **CSS**, and **JavaScript**. It is designed for intuitive interaction, allowing for easy data input, clear visualization of predictions, and practical growing tips.
 
 ## Setup
 
-To get started with the "Leaf" project, follow these steps:
+To set up and run the Leaf application, follow these steps:
 
 1.  **Clone the repository:**
 
@@ -48,29 +48,28 @@ To get started with the "Leaf" project, follow these steps:
 2.  Open your web browser and navigate to:
 
     ```
-    http://localhost:5000
+    http://localhost:8000
     ```
 
 ## Usage
 
-*   **Disease Detection:** Navigate to the "Leaf Disease" section, upload an image of a plant leaf, and receive immediate predictions on potential diseases and their confidence levels. Sample images for testing can be found in the `static/uploads` directory. [click here](https://github.com/KrupalWarale/SmartAgriculture-Smart-Plant-Monitoring-and-Disease-Detection-System/tree/main/static/uploads)
+*   **Disease Detection:** Go to the "Leaf Disease" section, upload a leaf image, and get instant predictions. Navigate to the "Leaf Disease" section, upload an image of a plant leaf, and receive immediate predictions on potential diseases and their confidence levels. Sample images for testing can be found in the `static/uploads` directory. [click here](https://github.com/KrupalWarale/SmartAgriculture-Smart-Plant-Monitoring-and-Disease-Detection-System/tree/main/static/uploads)
 
     Here's an example of a diseased leaf image:
     ![Sample Diseased Leaf](static/uploads/Alternaria_Leaf_resized.jpg)
-
-*   **Seed Sizing & Sowing Guidance:** Go to the "Seed Size Analysis" page. Input crop details, environmental conditions, and soil parameters to get predictions for optimal seed size, sowing depth, and spacing, along with recommended crops for the given conditions.
-*   **Sensor Data Monitoring:** Access the "Sensor Docs" page to view the current simulated sensor data, including temperature, humidity, soil moisture, motion detection, and pump status. The `plant_monitor.py` script can be run to update this data.
-*   **Weather Information:** The application leverages a weather API to provide relevant environmental data for informed decisions.
+*   **Seed Planting Guidance:** Visit the "Seed Size Analysis" page, input or fetch environmental data, and receive tailored recommendations.
+*   **Sensor Data:** Use the "Fetch Sensor" button on the "Seed Size Analysis" page to get data from a configured external sensor or the built-in mock data. Click "Configure Sensor" to set up your own device, or "Sensor Setup Docs" for detailed guidance on connecting an ESP32.
+*   **Weather Data:** Use the "Fetch Data" button to automatically retrieve local weather conditions based on your browser's geolocation.
 
 ## Technical Details
 
-*   **Backend:** Developed with Flask, a lightweight Python web framework, handling routing, data processing, and serving machine learning predictions.
+*   **Backend Architecture:** The application's backend is developed using **Flask**, a lightweight and flexible Python web framework. It handles all routing, processes incoming requests, manages data flow, and serves the machine learning prediction results to the frontend.
+*   **Frontend Technologies:** The user interface is built using standard web development languages: **HTML** for structuring content, **CSS** for styling and visual presentation, and **JavaScript** for interactive elements, dynamic content updates, and asynchronous API calls.
 *   **Machine Learning Models:**
-    *   **Leaf Disease:** Utilizes a pre-trained MobileNetV2 model for image classification, integrated through the Hugging Face Transformers library.
-    *   **Agricultural Predictions:** `agricultural_models.pkl` contains trained models (e.g., RandomForest, Gradient Boosting) for seed size, sowing depth, and spacing prediction. `unique_values.pkl` stores label encoders and unique categorical values for model inputs.
-*   **Frontend:** Built using standard web technologies: HTML for structure, CSS for styling, and JavaScript for dynamic interactions and API calls.
-*   **Data Handling:** `.pkl` files are used for persistent storage of machine learning models and categorical data. Sensor data is managed in `plant_data.json` within the `seedSize/sensorData` directory.
-*   **External APIs:** Integrates with the Open-Meteo API for fetching real-time weather information.
+    *   **Leaf Disease Detection:** This feature utilizes a pre-trained **MobileNetV2** model for image classification, integrated seamlessly using the Hugging Face **Transformers** library. This model has been fine-tuned for high accuracy in identifying various plant diseases.
+    *   **Agricultural Predictions:** The core predictive models for seed size, sowing depth, and spacing are loaded from `agricultural_models.pkl`. These are ensemble models (e.g., **RandomForestClassifier** and **RandomForestRegressor**) trained on diverse agricultural datasets. Categorical inputs (like crop names, regions, seasons, and soil types) are processed using **Label Encoders** stored in `unique_values.pkl`.
+*   **Data Management:** Sensor data, when not fetched from an external source, is simulated and managed through `plant_data.json` located in `seedSize/sensorData`. This data can be updated by running the `plant_monitor.py` script. The system is designed to seamlessly integrate with custom JSON endpoints from hardware sensors.
+*   **External API Integration:** The application consumes weather data from the **Open-Meteo API** to provide current environmental conditions, enhancing the accuracy of agricultural predictions without requiring an API key for its free tier.
 
 ## Project Structure
 
@@ -119,6 +118,7 @@ To fully grasp the depth and individual working mechanisms of the key components
 *   **If you're interested in the machine learning models and methodologies behind predicting optimal seed size, sowing depth, and sowing spacing, the following repository provides comprehensive details:**
     *   [seed-size-prediction-seedSize-sowingDepth-sowingSpacing](https://github.com/KrupalWarale/seed-size-prediction-seedSize-sowingDepth-sowingSpacing)
 
-By exploring these individual projects, you can gain a more profound understanding of the robust and intelligent systems that power "SmartAgriculture". 
+By exploring these individual projects, you can gain a more profound understanding of the robust and intelligent systems that power "SmartAgriculture".
 
 Arduino code had been placed in root folder to configure fetching of sensor data mention in documenation of fetch sensors data . 
+
