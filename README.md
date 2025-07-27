@@ -1,6 +1,6 @@
-# Leaf: Agricultural Analysis Suite
+# SmartAgriculture: Agricultural Analysis Suite
 
-"Leaf" is a comprehensive web application designed to assist in agricultural decision-making, offering tools for plant disease detection, optimal seed planting guidance, and sensor data monitoring.
+"SmartAgriculture" is a comprehensive web application designed to assist in agricultural decision-making, offering tools for plant disease detection, optimal seed planting guidance, and sensor data monitoring.
 
 ## Features
 
@@ -17,8 +17,9 @@ To set up and run the Leaf application, follow these steps:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/KrupalWarale/Leaf.git
-    cd Leaf
+    git clone https://github.com/KrupalWarale/SmartAgriculture-Smart-Plant-Monitoring-and-Disease-Detection-System.git
+    cd SmartAgriculture-Smart-Plant-Monitoring-and-Disease-Detection-System
+
     ```
 
 2.  **Create a virtual environment (recommended):**
