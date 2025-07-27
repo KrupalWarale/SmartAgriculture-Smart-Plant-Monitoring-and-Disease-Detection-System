@@ -53,7 +53,7 @@ To get started with the "Leaf" project, follow these steps:
 
 ## Usage
 
-*   **Disease Detection:** Navigate to the "Leaf Disease" section, upload an image of a plant leaf, and receive immediate predictions on potential diseases and their confidence levels. Sample images for testing can be found in the `static/uploads` directory.
+*   **Disease Detection:** Navigate to the "Leaf Disease" section, upload an image of a plant leaf, and receive immediate predictions on potential diseases and their confidence levels. Sample images for testing can be found in the `static/uploads` directory. https://github.com/KrupalWarale/SmartAgriculture-Smart-Plant-Monitoring-and-Disease-Detection-System/tree/main/static/uploads
 
     Here's an example of a diseased leaf image:
     ![Sample Diseased Leaf](static/uploads/Alternaria_Leaf_resized.jpg)
