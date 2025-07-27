@@ -53,7 +53,11 @@ To get started with the "Leaf" project, follow these steps:
 
 ## Usage
 
-*   **Disease Detection:** Navigate to the "Leaf Disease" section, upload an image of a plant leaf, and receive immediate predictions on potential diseases and their confidence levels.
+*   **Disease Detection:** Navigate to the "Leaf Disease" section, upload an image of a plant leaf, and receive immediate predictions on potential diseases and their confidence levels. Sample images for testing can be found in the `static/uploads` directory.
+
+    Here's an example of a diseased leaf image:
+    ![Sample Diseased Leaf](static/uploads/Alternaria_Leaf_resized.jpg)
+
 *   **Seed Sizing & Sowing Guidance:** Go to the "Seed Size Analysis" page. Input crop details, environmental conditions, and soil parameters to get predictions for optimal seed size, sowing depth, and spacing, along with recommended crops for the given conditions.
 *   **Sensor Data Monitoring:** Access the "Sensor Docs" page to view the current simulated sensor data, including temperature, humidity, soil moisture, motion detection, and pump status. The `plant_monitor.py` script can be run to update this data.
 *   **Weather Information:** The application leverages a weather API to provide relevant environmental data for informed decisions.
