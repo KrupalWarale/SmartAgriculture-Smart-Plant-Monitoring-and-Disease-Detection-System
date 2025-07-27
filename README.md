@@ -53,7 +53,7 @@ To get started with the "Leaf" project, follow these steps:
 
 ## Usage
 
-*   **Disease Detection:** Navigate to the "Leaf Disease" section, upload an image of a plant leaf, and receive immediate predictions on potential diseases and their confidence levels. Sample images for testing can be found in the `static/uploads` directory. https://github.com/KrupalWarale/SmartAgriculture-Smart-Plant-Monitoring-and-Disease-Detection-System/tree/main/static/uploads
+*   **Disease Detection:** Navigate to the "Leaf Disease" section, upload an image of a plant leaf, and receive immediate predictions on potential diseases and their confidence levels. Sample images for testing can be found in the `static/uploads` directory. [click here](https://github.com/KrupalWarale/SmartAgriculture-Smart-Plant-Monitoring-and-Disease-Detection-System/tree/main/static/uploads)
 
     Here's an example of a diseased leaf image:
     ![Sample Diseased Leaf](static/uploads/Alternaria_Leaf_resized.jpg)
@@ -119,4 +119,6 @@ To fully grasp the depth and individual working mechanisms of the key components
 *   **If you're interested in the machine learning models and methodologies behind predicting optimal seed size, sowing depth, and sowing spacing, the following repository provides comprehensive details:**
     *   [seed-size-prediction-seedSize-sowingDepth-sowingSpacing](https://github.com/KrupalWarale/seed-size-prediction-seedSize-sowingDepth-sowingSpacing)
 
-By exploring these individual projects, you can gain a more profound understanding of the robust and intelligent systems that power "Leaf". 
+By exploring these individual projects, you can gain a more profound understanding of the robust and intelligent systems that power "SmartAgriculture". 
+
+Arduino code had been placed in root folder to configure fetching of sensor data mention in documenation of fetch sensors data . 
