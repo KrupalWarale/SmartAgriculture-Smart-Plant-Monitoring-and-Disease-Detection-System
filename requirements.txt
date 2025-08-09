@@ -1,9 +1,4 @@
-Flask
-Werkzeug
-transformers
-Pillow
-torch
-pandas
-gunicorn
-requests
-scikit-learn 
+Flask==2.3.3
+Werkzeug==2.3.8
+gunicorn==21.2.0
+requests==2.31.0 
