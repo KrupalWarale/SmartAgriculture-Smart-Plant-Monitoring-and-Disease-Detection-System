@@ -57,6 +57,7 @@ To set up and run the Leaf application, follow these steps:
 *   **Disease Detection:** Go to the "Leaf Disease" section, upload a leaf image, and get instant predictions. Navigate to the "Leaf Disease" section, upload an image of a plant leaf, and receive immediate predictions on potential diseases and their confidence levels. Sample images for testing can be found in the `static/uploads` directory. [click here](https://github.com/KrupalWarale/SmartAgriculture-Smart-Plant-Monitoring-and-Disease-Detection-System/tree/main/static/uploads)
 
     Here's an example of a diseased leaf image:
+    <br>
     ![Sample Diseased Leaf](static/uploads/Alternaria_Leaf_resized.jpg)
 *   **Seed Planting Guidance:** Visit the "Seed Size Analysis" page, input or fetch environmental data, and receive tailored recommendations.
 *   **Sensor Data:** Use the "Fetch Sensor" button on the "Seed Size Analysis" page to get data from a configured external sensor or the built-in mock data. Click "Configure Sensor" to set up your own device, or "Sensor Setup Docs" for detailed guidance on connecting an ESP32.
@@ -122,4 +123,5 @@ To fully grasp the depth and individual working mechanisms of the key components
 By exploring these individual projects, you can gain a more profound understanding of the robust and intelligent systems that power "SmartAgriculture".
 
 Arduino code had been placed in root folder to configure fetching of sensor data mention in documenation of fetch sensors data . 
+
 
